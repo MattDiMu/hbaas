@@ -2,13 +2,19 @@ import CONFIG from './configuration'
 
 import express from 'express'
 
-const server = express()
+const app = express()
 
-server.get('/example', (_req, resp) => {
+app.get('/example', (_req, resp) => {
   resp.send('hi from example')
 })
 
-server.listen(CONFIG.port, () => {
+const server = app.listen(CONFIG.port, () => {
   console.log(`HBaaS started on port '${CONFIG.port}'. `)
 })
 
+process.on('SIGTERM', () => {
+  console.debug('SIGTERM shutdown requested')
+  server.close(() => {
+    console.log('server shutdown completed')
+  })
+})
