@@ -1,6 +1,6 @@
 # HBaaS
 **H**eadless **B**rowser **a**s **a** **S**ervice (HBaaS) is a microservice for providing headless browser functionality like
-- Converting a webpage into a PDF or
+- Converting a webpage into a PDF or 
 - Full-Page-Screenshotting a webpage
 - Exporting the rendered DOM of a webpage
 
@@ -11,12 +11,13 @@ Note: This is a FHTW project focussing on fullfilling as many factors of the [Tw
 
 
 ## Usage with docker
-run `docker-compose up`
-
+- run `docker-compose up`
+- open `http://localhost:8080` (or whatever port you configured using the HBAAS_PORT environmental variable) in your browser to see an overview of example requests
 
 ## Usage without docker
 requires a current version of npm and node (tested with node@16.8.0 and npm@7.21.0)
 - for developing run `npm run dev`
 - for building for production run `npm install && npm run build`
 - for starting the production build run `npm start`
+
 

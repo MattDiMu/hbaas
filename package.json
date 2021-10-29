@@ -26,11 +26,13 @@
   },
   "homepage": "https://github.com/MattDiMu/hbaas#readme",
   "dependencies": {
-    "express": "^4.17.1"
+    "express": "^4.17.1",
+    "puppeteer": "^10.4.0"
   },
   "devDependencies": {
     "@types/express": "^4.17.13",
     "@types/node": "^16.11.6",
+    "@types/puppeteer": "^5.4.4",
     "nodemon": "^2.0.14",
     "rimraf": "^3.0.2",
     "ts-node": "^10.4.0",
