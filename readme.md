@@ -11,7 +11,7 @@ Note: This is a FHTW project focussing on fullfilling as many factors of the [Tw
 
 
 ## Usage with docker
-- run `docker run -p 8080:8080 -it $(docker build -q .)` to build the image and instantly run it
+- run `docker run --cap-add=SYS_ADMIN -p 8080:8080 -it $(docker build -q .)` to build the image and instantly run it
 - open `http://localhost:8080` (or whatever port you configured using the HBAAS_PORT environmental variable) in your browser to see some example requests
 
 ## Usage without docker

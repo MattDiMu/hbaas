@@ -4,7 +4,8 @@ import { getUrlParam } from "../utils";
 
 export async function convertToImage(req: Request, resp: Response) {
   const browser = await puppeteer.launch({
-    headless: true
+    headless: true,
+    args: ['--disable-dev-shm-usage'], // fix for memory usage in docker image
   })
   const page = await browser.newPage()
   await page.goto(getUrlParam(req), {
