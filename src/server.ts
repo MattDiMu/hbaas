@@ -17,7 +17,7 @@ app.get('/health-check', (_req, resp) => {
 })
 
 const server = app.listen(CONFIG.port, () => {
-  console.info(`HBaaS started on port '${CONFIG.port}'. `)
+  console.info(`HBaaS started on http://localhost:${CONFIG.port}. `)
 })
 
 process.on('SIGTERM', () => {
