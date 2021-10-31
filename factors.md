@@ -5,7 +5,7 @@ The whole source code is inside one git repository (and hosted on github). Depen
 2. ✓/x (partly) Dependencies
 All dependencies are declared inside the package.json and the package-lock.json is used for explicitely locking the dependency tree to specific versions.
 
-Unfortunately I am not aware of any dependency isolation tools für the node/npm ecosystem to ensure that every dependency is declared and no system tools are used (only docker ensures, that nothing of the host operating system is used).
+Unfortunately I am not aware of any dependency isolation tools für the node/npm ecosystem to ensure that every dependency is declared and no system tools are used. Only the dockerization ensures, that nothing of the host OS is used implicitely. Within the docker image itself, the usage of puppeteer actually does rely on certain undeclared packages on order to run correctly (e.g. fonts packages), which is suboptimal, but at least does not leak outside the image.
 
 3. ✓ Config
 The configurable parts of the application are handled inside the `./src/configuration.ts` file, where the application checks for corresponding environmental variables or alternatively sets sensible default values. No sensitive information is leaked.
